@@ -419,7 +419,7 @@ function animate()
             c.fillStyle = 'black'
             c.font = "60px Arial"
             c.fillText("Max Touches: " + maxTouches.toString(), canvas.width / 64, 60)
-            c.fillText("Score : " + touches.toString(), canvas.width / 64, 120)
+            c.fillText("Score: " + touches.toString(), canvas.width / 64, 120)
 
 
             leftColorButton.draw()

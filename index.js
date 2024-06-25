@@ -372,11 +372,30 @@ class Button
 function endGame()
 {
     lives--
-    ball = new Ball()
-    cleat1 = new Cleat(0)
-    cleat2 = new Cleat(1)
+    ball.x = 500
+    ball.y = 50
+    ball.launchDir = Math.round(Math.random())
+    if (ball.launchDir == 0)
+    {
+        ball.xVel = 40
+    }
+    else
+    {
+        ball.xVel = -40
+    }
+    
+    ball.yVel = 0
+    cleat1.x = 200
+    cleat1.y = 500
+    cleat1.xVel = 0
+    cleat1.yVel = 0
+    cleat2.x = 710
+    cleat2.y = 500
+    cleat2.xVel = 0
+    cleat2.yVel = 0
     rightTouches = 0
     leftTouches = 0
+    startTime = 3
     if (lives < 0)
     {
         menu = 0
@@ -462,8 +481,10 @@ function animate()
             playButton.draw()
             if (playButton.isClicked())
             {
+                lives = 4
                 endGame()
-                lives = 3 //because it subtracts a life
+                touches = 0
+
                 menu = 1
             }
         }

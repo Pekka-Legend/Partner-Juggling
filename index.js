@@ -568,6 +568,20 @@ document.onkeydown = function(e)
     {
         keys.right = true
     }
+    if (e.key == 'r')
+    {
+        if (menu == 1)
+        {
+            lives = 4
+            endGame()
+            touches = 0
+            menu = 1
+        }
+    }
+    if (e.key == 'q')
+    {
+        menu = 0
+    }
 }
 
 document.onkeyup = function(e)
